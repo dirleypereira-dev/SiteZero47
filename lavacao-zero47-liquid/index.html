@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ZERO47 | Lavação Premium</title>
+  <meta name="description" content="Orçamento inteligente para lavação automotiva premium ZERO47." />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!--
+    PROJETO ZERO47 — ARQUIVOS DE IMAGEM
+
+    Logo:
+    assets/brand/logo.svg
+
+    Carros:
+    assets/cars/carro-limpo.png
+    assets/cars/carro-sujo.png
+    assets/cars/carro-muito-sujo.png
+
+    Para trocar uma imagem:
+    1. Mantenha o mesmo nome do arquivo; ou
+    2. Mude o caminho no data-car e no script.js.
+
+    Observação:
+    Os cards usam ÍCONES SVG, não emoji.
+    O visual usa glass/liquid style escuro, não card branco.
+  -->
+
+  <!-- ÍCONES SVG DO PROJETO -->
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="icon-sparkle" viewBox="0 0 24 24">
+      <path d="M12 2l1.9 5.7L20 10l-6.1 2.3L12 18l-1.9-5.7L4 10l6.1-2.3L12 2z"/>
+      <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/>
+    </symbol>
+
+    <symbol id="icon-water" viewBox="0 0 24 24">
+      <path d="M12 2s6 6.5 6 12a6 6 0 0 1-12 0c0-5.5 6-12 6-12z"/>
+      <path d="M9 15a3 3 0 0 0 4 2.8"/>
+    </symbol>
+
+    <symbol id="icon-soap" viewBox="0 0 24 24">
+      <path d="M8 8h8a4 4 0 0 1 4 4v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-3a4 4 0 0 1 4-4z"/>
+      <path d="M9 8V5a3 3 0 0 1 6 0v3"/>
+      <path d="M8 13h8"/>
+    </symbol>
+
+    <symbol id="icon-wax" viewBox="0 0 24 24">
+      <path d="M12 2v6"/>
+      <path d="M8 6h8"/>
+      <path d="M7 10h10l2 10H5l2-10z"/>
+      <path d="M9 14h6"/>
+    </symbol>
+
+    <symbol id="icon-polish" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="7"/>
+      <circle cx="12" cy="12" r="2"/>
+      <path d="M12 5v4"/>
+      <path d="M12 15v4"/>
+      <path d="M5 12h4"/>
+      <path d="M15 12h4"/>
+    </symbol>
+
+    <symbol id="icon-underbody" viewBox="0 0 24 24">
+      <path d="M4 9h16"/>
+      <path d="M6 9l2-4h8l2 4"/>
+      <circle cx="7" cy="15" r="2"/>
+      <circle cx="17" cy="15" r="2"/>
+      <path d="M9 15h6"/>
+      <path d="M12 17v4"/>
+    </symbol>
+
+    <symbol id="icon-seat" viewBox="0 0 24 24">
+      <path d="M8 3h4a3 3 0 0 1 3 3v5"/>
+      <path d="M7 12h10a3 3 0 0 1 3 3v3H8a4 4 0 0 1-4-4V5"/>
+      <path d="M8 18v3"/>
+      <path d="M18 18v3"/>
+    </symbol>
+
+    <symbol id="icon-shield" viewBox="0 0 24 24">
+      <path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6l7-3z"/>
+      <path d="M9 12l2 2 4-5"/>
+    </symbol>
+
+    <symbol id="icon-car" viewBox="0 0 24 24">
+      <path d="M4 13l2-5a3 3 0 0 1 2.8-2h6.4A3 3 0 0 1 18 8l2 5"/>
+      <path d="M3 13h18v5H3v-5z"/>
+      <circle cx="7" cy="18" r="2"/>
+      <circle cx="17" cy="18" r="2"/>
+      <path d="M7 10h10"/>
+    </symbol>
+
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path d="M20 11.5a8 8 0 0 1-11.8 7l-4.2 1.2 1.2-4A8 8 0 1 1 20 11.5z"/>
+      <path d="M9 8.5c.5 3 2.5 5 5.5 6l1.2-1.2"/>
+      <path d="M8.5 8l1.1-1.1"/>
+    </symbol>
+  </svg>
+
+  <header class="header">
+    <a href="#" class="logo" aria-label="ZERO47 - página inicial">
+      <img src="assets/brand/logo.svg" alt="Logo ZERO47" />
+    </a>
+
+    <nav class="nav" aria-label="Menu principal">
+      <a href="#orcamento">Orçamento</a>
+      <a href="#detalhes">Detalhes</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <a class="header__cta" href="#orcamento">Calcular</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <span class="eyebrow">ZERO47 Estética Automotiva</span>
+        <h1>Lavação premium calculada pelo estado real do seu carro.</h1>
+        <p>
+          Selecione limpeza, cera, polimento e outros cuidados. O visual do carro
+          muda conforme a sujeira e o valor aparece em tempo real.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#orcamento" class="btn btn--primary">Montar orçamento</a>
+          <a href="#detalhes" class="btn btn--ghost">Ver detalhes</a>
+        </div>
+      </div>
+
+      <div class="hero__stage" aria-label="Prévia visual do carro">
+        <div class="liquid-orb liquid-orb--red"></div>
+        <div class="liquid-orb liquid-orb--dark"></div>
+
+        <div class="car-scene">
+          <div class="car-scene__status">
+            <span>Status visual</span>
+            <strong id="carStatus">Carro limpo</strong>
+          </div>
+
+          <img
+            id="carPreview"
+            class="car-preview"
+            src="assets/cars/carro-limpo.png"
+            alt="Carro limpo em destaque"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="detalhes" class="highlights" aria-labelledby="detalhesTitulo">
+      <div class="section-head">
+        <span class="eyebrow">Destaques</span>
+        <h2 id="detalhesTitulo">Escolhas rápidas, visual limpo e orçamento direto.</h2>
+      </div>
+
+      <div class="highlight-grid">
+        <article class="highlight-card">
+          <svg><use href="#icon-car"></use></svg>
+          <span>Estado</span>
+          <strong>3 níveis</strong>
+        </article>
+
+        <article class="highlight-card">
+          <svg><use href="#icon-water"></use></svg>
+          <span>Lavagem</span>
+          <strong>3 tipos</strong>
+        </article>
+
+        <article class="highlight-card">
+          <svg><use href="#icon-wax"></use></svg>
+          <span>Acabamento</span>
+          <strong>Cera</strong>
+        </article>
+
+        <article class="highlight-card">
+          <svg><use href="#icon-polish"></use></svg>
+          <span>Brilho</span>
+          <strong>Polimento</strong>
+        </article>
+      </div>
+    </section>
+
+    <section id="orcamento" class="builder" aria-labelledby="orcamentoTitulo">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">Orçamento interativo</span>
+        <h2 id="orcamentoTitulo">Monte o serviço como se fosse um configurador premium.</h2>
+        <p>Clique nos cards. Um item por categoria principal, vários itens nos extras.</p>
+      </div>
+
+      <div class="builder__layout">
+        <div class="builder__options">
+          <section class="option-panel" aria-labelledby="estadoTitulo">
+            <div class="option-panel__top">
+              <span>01</span>
+              <h3 id="estadoTitulo">Estado do carro</h3>
+            </div>
+
+            <div class="option-grid">
+              <button
+                type="button"
+                class="option-card active"
+                data-group="estado"
+                data-label="Carro limpo"
+                data-price="0"
+                data-car="assets/cars/carro-limpo.png"
+                data-alt="Carro limpo"
+              >
+                <svg><use href="#icon-sparkle"></use></svg>
+                <span>Limpo</span>
+                <small>Sem acréscimo</small>
+              </button>
+
+              <button
+                type="button"
+                class="option-card"
+                data-group="estado"
+                data-label="Carro sujo"
+                data-price="25"
+                data-car="assets/cars/carro-sujo.png"
+                data-alt="Carro sujo"
+              >
+                <svg><use href="#icon-car"></use></svg>
+                <span>Sujo</span>
+                <small>+ R$ 25</small>
+              </button>
+
+              <button
+                type="button"
+                class="option-card"
+                data-group="estado"
+                data-label="Carro muito sujo"
+                data-price="50"
+                data-car="assets/cars/carro-muito-sujo.png"
+                data-alt="Carro muito sujo"
+              >
+                <svg><use href="#icon-soap"></use></svg>
+                <span>Muito sujo</span>
+                <small>+ R$ 50</small>
+              </button>
+            </div>
+          </section>
+
+          <section class="option-panel" aria-labelledby="lavagemTitulo">
+            <div class="option-panel__top">
+              <span>02</span>
+              <h3 id="lavagemTitulo">Tipo de lavagem</h3>
+            </div>
+
+            <div class="option-grid">
+              <button type="button" class="option-card active" data-group="lavagem" data-label="Lavagem externa" data-price="0">
+                <svg><use href="#icon-water"></use></svg>
+                <span>Externa</span>
+                <small>Incluso no base</small>
+              </button>
+
+              <button type="button" class="option-card" data-group="lavagem" data-label="Lavagem interna e externa" data-price="40">
+                <svg><use href="#icon-seat"></use></svg>
+                <span>Dentro e fora</span>
+                <small>+ R$ 40</small>
+              </button>
+
+              <button type="button" class="option-card" data-group="lavagem" data-label="Lavagem completa" data-price="80">
+                <svg><use href="#icon-shield"></use></svg>
+                <span>Completa</span>
+                <small>+ R$ 80</small>
+              </button>
+            </div>
+          </section>
+
+          <section class="option-panel" aria-labelledby="veiculoTitulo">
+            <div class="option-panel__top">
+              <span>03</span>
+              <h3 id="veiculoTitulo">Tipo de veículo</h3>
+            </div>
+
+            <div class="option-grid">
+              <button type="button" class="option-card active" data-group="veiculo" data-label="Hatch" data-price="0">
+                <svg><use href="#icon-car"></use></svg>
+                <span>Hatch</span>
+                <small>Sem acréscimo</small>
+              </button>
+
+              <button type="button" class="option-card" data-group="veiculo" data-label="Sedan" data-price="15">
+                <svg><use href="#icon-car"></use></svg>
+                <span>Sedan</span>
+                <small>+ R$ 15</small>
+              </button>
+
+              <button type="button" class="option-card" data-group="veiculo" data-label="SUV / Caminhonete" data-price="35">
+                <svg><use href="#icon-car"></use></svg>
+                <span>SUV</span>
+                <small>+ R$ 35</small>
+              </button>
+            </div>
+          </section>
+
+          <section class="option-panel" aria-labelledby="extrasTitulo">
+            <div class="option-panel__top">
+              <span>04</span>
+              <h3 id="extrasTitulo">Extras</h3>
+            </div>
+
+            <div class="option-grid option-grid--four">
+              <button type="button" class="option-card option-card--multi" data-group="extra" data-label="Aplicação de cera" data-price="30">
+                <svg><use href="#icon-wax"></use></svg>
+                <span>Cera</span>
+                <small>+ R$ 30</small>
+              </button>
+
+              <button type="button" class="option-card option-card--multi" data-group="extra" data-label="Limpeza inferior" data-price="35">
+                <svg><use href="#icon-underbody"></use></svg>
+                <span>Parte de baixo</span>
+                <small>+ R$ 35</small>
+              </button>
+
+              <button type="button" class="option-card option-card--multi" data-group="extra" data-label="Higienização interna" data-price="90">
+                <svg><use href="#icon-soap"></use></svg>
+                <span>Higienização</span>
+                <small>+ R$ 90</small>
+              </button>
+
+              <button type="button" class="option-card option-card--multi" data-group="extra" data-label="Polimento técnico" data-price="180">
+                <svg><use href="#icon-polish"></use></svg>
+                <span>Polimento</span>
+                <small>+ R$ 180</small>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <aside class="summary-card" aria-label="Resumo do orçamento">
+          <div class="summary-card__head">
+            <span class="eyebrow">Resumo</span>
+            <h3>Orçamento ZERO47</h3>
+          </div>
+
+          <div class="summary-card__base">
+            <span>Base</span>
+            <strong>R$ 60,00</strong>
+          </div>
+
+          <ul id="summaryList" class="summary-list"></ul>
+
+          <div class="summary-total">
+            <span>Total estimado</span>
+            <strong id="totalPrice">R$ 60,00</strong>
+          </div>
+
+          <a href="#" id="whatsappLink" target="_blank" class="btn btn--primary btn--full">
+            <svg><use href="#icon-whatsapp"></use></svg>
+            Enviar no WhatsApp
+          </a>
+
+          <p class="summary-note">
+            Valor estimado. O preço final pode mudar após avaliação presencial do veículo.
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato" class="footer">
+    <img src="assets/brand/logo.svg" alt="Logo ZERO47" />
+    <p>ZERO47 — estética automotiva com visual premium e orçamento inteligente.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
